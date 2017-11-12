@@ -1,0 +1,29 @@
+{
+  "name": "ethereum-dice-oracle-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "client.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "prompt": "^1.0.0",
+    "truffle-contract": "^3.0.1",
+    "web3": "^1.0.0-beta2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesmorgan/ethereum-dice-oracle-example.git"
+  },
+  "author": "James Morgan - Blockchain Manchester",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jamesmorgan/ethereum-dice-oracle-example/issues"
+  },
+  "homepage": "https://github.com/jamesmorgan/ethereum-dice-oracle-example"
+}
