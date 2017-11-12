@@ -34,18 +34,22 @@ web3.eth.getAccounts((err, accounts) => {
     oracleContract.deployed()
         .then((oracleInstance) => {
 
-            // Subscribe to the callback and do something when it happens i.e. set a value on the Oracle
+            /**
+             * Subscribe to a request for providing a off chain data
+             */
             oracleInstance.CallbackTrigger()
                 .watch((err, event) => {
 
+                    // launch prompt for dice values
                     prompt.start();
 
-                    prompt.get(['throw1', 'throw2'], function (err, result) {
-                        console.log('Received:', result);
-                        console.log('  throw 2: ' + result.throw1);
-                        console.log('  throw 1: ' + result.throw2);
+                    // Capture the result from the 'real world'
+                    prompt.get(['throw1', 'throw2'], (err, result) => {
+                        console.log('Received: ');
+                        console.log(`  dye one: ${result.throw1}`);
+                        console.log(`  dye two: ${result.throw2}`);
 
-                        // Update the Oracle - providing the dice throwing values
+                        // Update the Oracle - providing the real world value
                         oracleInstance.setResult(result.throw1, result.throw2, {from: accounts[0]})
                     });
                 })

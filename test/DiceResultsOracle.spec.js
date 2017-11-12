@@ -44,4 +44,7 @@ contract('DiceResultsOracle spec', function (accounts) {
                 assert.strictEqual(results[1].toNumber(), dyeTwo);
             });
     });
+
+    // TODO more tests...
+
 });

@@ -26,20 +26,29 @@ if (typeof oracleContract.currentProvider.sendAsync !== "function") {
     };
 }
 
-
 web3.eth.getAccounts((err, accounts) => {
+
+    // Get deployed contract
     oracleContract.deployed()
         .then((oracleInstance) => {
 
-            // Init - get the results
+            /**
+             * Initialise [client -> oracle] contract (business relationship)
+             */
             getOracleResults(oracleInstance, accounts);
 
-            // Create event watcher - another process could then be triggered e.g. another real world process
+            /**
+             * Event subscriber of [GameResulted] - from [oracle -> client]
+             *
+             * The result is emitted by the oracle, allows for a client to handle oracle state changes
+             */
             oracleInstance.GameResulted()
                 .watch((err, event) => {
                     console.log("Game resulted -> ", event);
 
-                    // Demonstration only - re-run getResults()
+                    /**
+                     * Re-trigger asking the oracles for new results
+                     */
                     getOracleResults(oracleInstance, accounts);
                 });
         })
@@ -52,14 +61,16 @@ web3.eth.getAccounts((err, accounts) => {
 const getOracleResults = (oracleInstance, accounts) => {
 
     const oraclePromises = [
-        oracleInstance.getResult(),  // Get currently stored dice result
-        oracleInstance.triggerUpdate({from: accounts[0]})  // Request oracle to update the information
+        oracleInstance.getResult(),  // Get currently stored results
+        oracleInstance.triggerUpdate({from: accounts[0]})  // Request the oracle contract to update its state
     ];
 
     Promise.all(oraclePromises)
         .then((result) => {
-            console.log('Requesting Oracle to update');
-            console.log('dice throw values: ' + result[0]);
+            console.log(`Requesting Oracle to update`);
+            console.log("----------------------------\n");
+            console.log(`Throw values ${result[0]}'`);
+            console.log("----------------------------\n");
         })
-        .catch((err) => console.log("Promise all failure: " + err));
+        .catch((err) => console.log(`getOracleResults() error: [${err}]`));
 };
