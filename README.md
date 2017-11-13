@@ -9,7 +9,7 @@ npm install
 
 ## Running the Oracle
 
-#### Start Test RPC in once shell
+#### Start Test RPC
 ```bash
 testrpc 
 ```

@@ -17,12 +17,12 @@ contract('DiceResultsOracle spec', function (accounts) {
 
     it("should set results and emit event once resulted", async () => {
 
-        const dyeOne = 2;
-        const dyeTwo = 4;
+        const dieOne = 2;
+        const dieTwo = 4;
 
         let eventWatcher = oracle.GameResulted();
 
-        return oracle.setResult(dyeOne, dyeTwo, {from: accounts[0]})
+        return oracle.setResult(dieOne, dieTwo, {from: accounts[0]})
             .then(() => {
                 return eventWatcher.get();
             })
@@ -34,14 +34,14 @@ contract('DiceResultsOracle spec', function (accounts) {
                 let eventArgs = events[0].args;
 
                 assert.equal(eventArgs.resulter, accounts[0]);
-                assert.equal(eventArgs.dye1, dyeOne);
-                assert.equal(eventArgs.dye2, dyeTwo);
+                assert.equal(eventArgs.die1, dieOne);
+                assert.equal(eventArgs.die2, dieTwo);
 
                 return oracle.getResult();
             })
             .then((results) => {
-                assert.strictEqual(results[0].toNumber(), dyeOne);
-                assert.strictEqual(results[1].toNumber(), dyeTwo);
+                assert.strictEqual(results[0].toNumber(), dieOne);
+                assert.strictEqual(results[1].toNumber(), dieTwo);
             });
     });
 

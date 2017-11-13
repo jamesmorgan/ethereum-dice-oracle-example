@@ -46,8 +46,8 @@ web3.eth.getAccounts((err, accounts) => {
                     // Capture the result from the 'real world'
                     prompt.get(['throw1', 'throw2'], (err, result) => {
                         console.log('Received: ');
-                        console.log(`  dye one: ${result.throw1}`);
-                        console.log(`  dye two: ${result.throw2}`);
+                        console.log(`  die one: ${result.throw1}`);
+                        console.log(`  die two: ${result.throw2}`);
 
                         // Update the Oracle - providing the real world value
                         oracleInstance.setResult(result.throw1, result.throw2, {from: accounts[0]})

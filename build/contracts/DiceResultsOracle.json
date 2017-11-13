@@ -46,11 +46,11 @@
       "constant": false,
       "inputs": [
         {
-          "name": "dyeOne",
+          "name": "dieOne",
           "type": "uint8"
         },
         {
-          "name": "dyeTwo",
+          "name": "dieTwo",
           "type": "uint8"
         }
       ],
@@ -82,12 +82,12 @@
         },
         {
           "indexed": false,
-          "name": "dye1",
+          "name": "die1",
           "type": "uint8"
         },
         {
           "indexed": false,
-          "name": "dye2",
+          "name": "die2",
           "type": "uint8"
         }
       ],
@@ -95,11 +95,11 @@
       "type": "event"
     }
   ],
-  "bytecode": "0x6060604052341561000f57600080fd5b33600060026101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506103418061005f6000396000f300606060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806343f7b7aa146100675780638da5cb5b1461007c578063de292789146100d1578063f6c9fd5e1461010d575b600080fd5b341561007257600080fd5b61007a61013f565b005b341561008757600080fd5b61008f61016d565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156100dc57600080fd5b6100e4610193565b604051808360ff1660ff1681526020018260ff1660ff1681526020019250505060405180910390f35b341561011857600080fd5b61013d600480803560ff1690602001909190803560ff169060200190919050506101bd565b005b7fa8d0c3c967a0a92a841be8c52c3071acd07c76b46e1f3676d6a6b1376b96836760405160405180910390a1565b600060029054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000806000809054906101000a900460ff16600060019054906101000a900460ff16915091509091565b818160018260ff16101580156101d7575060068260ff1611155b15156101df57fe5b60018160ff16101580156101f7575060068160ff1611155b15156101ff57fe5b600060029054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561025b57600080fd5b836000806101000a81548160ff021916908360ff16021790555082600060016101000a81548160ff021916908360ff1602179055507fcc20b4494681362b525b502ffe4c6c6907ded8196c579dd418c3d4d43b4a7c3a338585604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018360ff1660ff1681526020018260ff1660ff168152602001935050505060405180910390a1505050505600a165627a7a723058204875a870651806816b5fccbc4826dc63b849f9922ab84384ffc419ea42e7fbee0029",
-  "deployedBytecode": "0x606060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806343f7b7aa146100675780638da5cb5b1461007c578063de292789146100d1578063f6c9fd5e1461010d575b600080fd5b341561007257600080fd5b61007a61013f565b005b341561008757600080fd5b61008f61016d565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156100dc57600080fd5b6100e4610193565b604051808360ff1660ff1681526020018260ff1660ff1681526020019250505060405180910390f35b341561011857600080fd5b61013d600480803560ff1690602001909190803560ff169060200190919050506101bd565b005b7fa8d0c3c967a0a92a841be8c52c3071acd07c76b46e1f3676d6a6b1376b96836760405160405180910390a1565b600060029054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000806000809054906101000a900460ff16600060019054906101000a900460ff16915091509091565b818160018260ff16101580156101d7575060068260ff1611155b15156101df57fe5b60018160ff16101580156101f7575060068160ff1611155b15156101ff57fe5b600060029054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561025b57600080fd5b836000806101000a81548160ff021916908360ff16021790555082600060016101000a81548160ff021916908360ff1602179055507fcc20b4494681362b525b502ffe4c6c6907ded8196c579dd418c3d4d43b4a7c3a338585604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018360ff1660ff1681526020018260ff1660ff168152602001935050505060405180910390a1505050505600a165627a7a723058204875a870651806816b5fccbc4826dc63b849f9922ab84384ffc419ea42e7fbee0029",
+  "bytecode": "0x6060604052341561000f57600080fd5b33600060026101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506103418061005f6000396000f300606060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806343f7b7aa146100675780638da5cb5b1461007c578063de292789146100d1578063f6c9fd5e1461010d575b600080fd5b341561007257600080fd5b61007a61013f565b005b341561008757600080fd5b61008f61016d565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156100dc57600080fd5b6100e4610193565b604051808360ff1660ff1681526020018260ff1660ff1681526020019250505060405180910390f35b341561011857600080fd5b61013d600480803560ff1690602001909190803560ff169060200190919050506101bd565b005b7fa8d0c3c967a0a92a841be8c52c3071acd07c76b46e1f3676d6a6b1376b96836760405160405180910390a1565b600060029054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000806000809054906101000a900460ff16600060019054906101000a900460ff16915091509091565b818160018260ff16101580156101d7575060068260ff1611155b15156101df57fe5b60018160ff16101580156101f7575060068160ff1611155b15156101ff57fe5b600060029054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561025b57600080fd5b836000806101000a81548160ff021916908360ff16021790555082600060016101000a81548160ff021916908360ff1602179055507fcc20b4494681362b525b502ffe4c6c6907ded8196c579dd418c3d4d43b4a7c3a338585604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018360ff1660ff1681526020018260ff1660ff168152602001935050505060405180910390a1505050505600a165627a7a72305820d16e945e329d57858490dffd808ae5a67711fab96fa4eb3f80ce1a94f690b1610029",
+  "deployedBytecode": "0x606060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806343f7b7aa146100675780638da5cb5b1461007c578063de292789146100d1578063f6c9fd5e1461010d575b600080fd5b341561007257600080fd5b61007a61013f565b005b341561008757600080fd5b61008f61016d565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156100dc57600080fd5b6100e4610193565b604051808360ff1660ff1681526020018260ff1660ff1681526020019250505060405180910390f35b341561011857600080fd5b61013d600480803560ff1690602001909190803560ff169060200190919050506101bd565b005b7fa8d0c3c967a0a92a841be8c52c3071acd07c76b46e1f3676d6a6b1376b96836760405160405180910390a1565b600060029054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000806000809054906101000a900460ff16600060019054906101000a900460ff16915091509091565b818160018260ff16101580156101d7575060068260ff1611155b15156101df57fe5b60018160ff16101580156101f7575060068160ff1611155b15156101ff57fe5b600060029054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561025b57600080fd5b836000806101000a81548160ff021916908360ff16021790555082600060016101000a81548160ff021916908360ff1602179055507fcc20b4494681362b525b502ffe4c6c6907ded8196c579dd418c3d4d43b4a7c3a338585604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018360ff1660ff1681526020018260ff1660ff168152602001935050505060405180910390a1505050505600a165627a7a72305820d16e945e329d57858490dffd808ae5a67711fab96fa4eb3f80ce1a94f690b1610029",
   "sourceMap": "82:1118:0:-;;;308:71;;;;;;;;362:10;354:5;;:18;;;;;;;;;;;;;;;;;;82:1118;;;;;;",
   "deployedSourceMap": "82:1118:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;385:66;;;;;;;;;;;;;;184:20;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;838:114;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;457:375;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;385:66;427:17;;;;;;;;;;385:66::o;184:20::-;;;;;;;;;;;;;:::o;838:114::-;884:5;891;916:13;;;;;;;;;;;931;;;;;;;;;;;908:37;;;;838:114;;:::o;457:375::-;521:6;529;1118:1;1108:6;:11;;;;:26;;;;;1133:1;1123:6;:11;;;;1108:26;1101:34;;;;;;1162:1;1152:6;:11;;;;:26;;;;;1177:1;1167:6;:11;;;;1152:26;1145:34;;;;;;637:5;;;;;;;;;;;623:19;;:10;:19;;;615:28;;;;;;;;701:6;685:13;;:22;;;;;;;;;;;;;;;;;;733:6;717:13;;:22;;;;;;;;;;;;;;;;;;785:40;798:10;810:6;818;785:40;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;457:375;;;;:::o",
-  "source": "pragma solidity ^0.4.17;\n\n\n/**\n * DiceResultsOracle - A basic Oracle example\n **/\ncontract DiceResultsOracle {\n\n    uint8 private dyeOneOutcome;\n\n    uint8 private dyeTwoOutcome;\n\n    address public owner;\n\n    event CallbackTrigger();\n\n    event GameResulted(address resulter, uint8 dye1, uint8 dye2);\n\n    function DiceResultsOracle() public {\n        owner = msg.sender;\n    }\n\n    function triggerUpdate() public {\n        CallbackTrigger();\n    }\n\n    function setResult(uint8 dyeOne, uint8 dyeTwo)\n    validateDice(dyeOne, dyeTwo)\n    public {\n        // ignore if its not the Oracle i.e. the creator\n        require(msg.sender == owner);\n\n        // Result the contract\n        dyeOneOutcome = dyeOne;\n        dyeTwoOutcome = dyeTwo;\n\n        // Fire notification event\n        GameResulted(msg.sender, dyeOne, dyeTwo);\n    }\n\n    function getResult() constant public returns (uint8, uint8) {\n        return (dyeOneOutcome, dyeTwoOutcome);\n    }\n\n    /*********************\n     * Private modifiers *\n     *********************/\n\n    modifier validateDice(uint8 dyeOne, uint8 dyeTwo) {\n        assert(dyeOne >= 1 && dyeOne <= 6);\n        assert(dyeTwo >= 1 && dyeTwo <= 6);\n        _;\n    }\n\n}\n",
+  "source": "pragma solidity ^0.4.17;\n\n\n/**\n * DiceResultsOracle - A basic Oracle example\n **/\ncontract DiceResultsOracle {\n\n    uint8 private dieOneOutcome;\n\n    uint8 private dieTwoOutcome;\n\n    address public owner;\n\n    event CallbackTrigger();\n\n    event GameResulted(address resulter, uint8 die1, uint8 die2);\n\n    function DiceResultsOracle() public {\n        owner = msg.sender;\n    }\n\n    function triggerUpdate() public {\n        CallbackTrigger();\n    }\n\n    function setResult(uint8 dieOne, uint8 dieTwo)\n    validateDice(dieOne, dieTwo)\n    public {\n        // ignore if its not the Oracle i.e. the creator\n        require(msg.sender == owner);\n\n        // Result the contract\n        dieOneOutcome = dieOne;\n        dieTwoOutcome = dieTwo;\n\n        // Fire notification event\n        GameResulted(msg.sender, dieOne, dieTwo);\n    }\n\n    function getResult() constant public returns (uint8, uint8) {\n        return (dieOneOutcome, dieTwoOutcome);\n    }\n\n    /*********************\n     * Private modifiers *\n     *********************/\n\n    modifier validateDice(uint8 dieOne, uint8 dieTwo) {\n        assert(dieOne >= 1 && dieOne <= 6);\n        assert(dieTwo >= 1 && dieTwo <= 6);\n        _;\n    }\n\n}\n",
   "sourcePath": "/Users/jamesmorgan/Dropbox/workspace-js/ethereum-dice-oracle-example/contracts/DiceResultsOracle.sol",
   "ast": {
     "attributes": {
@@ -145,7 +145,7 @@
           {
             "attributes": {
               "constant": false,
-              "name": "dyeOneOutcome",
+              "name": "dieOneOutcome",
               "scope": 108,
               "stateVariable": true,
               "storageLocation": "default",
@@ -171,7 +171,7 @@
           {
             "attributes": {
               "constant": false,
-              "name": "dyeTwoOutcome",
+              "name": "dieTwoOutcome",
               "scope": 108,
               "stateVariable": true,
               "storageLocation": "default",
@@ -281,7 +281,7 @@
                     "attributes": {
                       "constant": false,
                       "indexed": false,
-                      "name": "dye1",
+                      "name": "die1",
                       "scope": 17,
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -308,7 +308,7 @@
                     "attributes": {
                       "constant": false,
                       "indexed": false,
-                      "name": "dye2",
+                      "name": "die2",
                       "scope": 17,
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -573,7 +573,7 @@
                   {
                     "attributes": {
                       "constant": false,
-                      "name": "dyeOne",
+                      "name": "dieOne",
                       "scope": 67,
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -599,7 +599,7 @@
                   {
                     "attributes": {
                       "constant": false,
-                      "name": "dyeTwo",
+                      "name": "dieTwo",
                       "scope": 67,
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -662,7 +662,7 @@
                       ],
                       "referencedDeclaration": 35,
                       "type": "uint8",
-                      "value": "dyeOne"
+                      "value": "dieOne"
                     },
                     "id": 40,
                     "name": "Identifier",
@@ -676,7 +676,7 @@
                       ],
                       "referencedDeclaration": 37,
                       "type": "uint8",
-                      "value": "dyeTwo"
+                      "value": "dieTwo"
                     },
                     "id": 41,
                     "name": "Identifier",
@@ -821,7 +821,7 @@
                               ],
                               "referencedDeclaration": 3,
                               "type": "uint8",
-                              "value": "dyeOneOutcome"
+                              "value": "dieOneOutcome"
                             },
                             "id": 51,
                             "name": "Identifier",
@@ -835,7 +835,7 @@
                               ],
                               "referencedDeclaration": 35,
                               "type": "uint8",
-                              "value": "dyeOne"
+                              "value": "dieOne"
                             },
                             "id": 52,
                             "name": "Identifier",
@@ -872,7 +872,7 @@
                               ],
                               "referencedDeclaration": 5,
                               "type": "uint8",
-                              "value": "dyeTwoOutcome"
+                              "value": "dieTwoOutcome"
                             },
                             "id": 55,
                             "name": "Identifier",
@@ -886,7 +886,7 @@
                               ],
                               "referencedDeclaration": 37,
                               "type": "uint8",
-                              "value": "dyeTwo"
+                              "value": "dieTwo"
                             },
                             "id": 56,
                             "name": "Identifier",
@@ -985,7 +985,7 @@
                               ],
                               "referencedDeclaration": 35,
                               "type": "uint8",
-                              "value": "dyeOne"
+                              "value": "dieOne"
                             },
                             "id": 62,
                             "name": "Identifier",
@@ -999,7 +999,7 @@
                               ],
                               "referencedDeclaration": 37,
                               "type": "uint8",
-                              "value": "dyeTwo"
+                              "value": "dieTwo"
                             },
                             "id": 63,
                             "name": "Identifier",
@@ -1137,7 +1137,7 @@
                               ],
                               "referencedDeclaration": 3,
                               "type": "uint8",
-                              "value": "dyeOneOutcome"
+                              "value": "dieOneOutcome"
                             },
                             "id": 74,
                             "name": "Identifier",
@@ -1151,7 +1151,7 @@
                               ],
                               "referencedDeclaration": 5,
                               "type": "uint8",
-                              "value": "dyeTwoOutcome"
+                              "value": "dieTwoOutcome"
                             },
                             "id": 75,
                             "name": "Identifier",
@@ -1188,7 +1188,7 @@
                   {
                     "attributes": {
                       "constant": false,
-                      "name": "dyeOne",
+                      "name": "dieOne",
                       "scope": 107,
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -1214,7 +1214,7 @@
                   {
                     "attributes": {
                       "constant": false,
-                      "name": "dyeTwo",
+                      "name": "dieTwo",
                       "scope": 107,
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -1318,7 +1318,7 @@
                                       ],
                                       "referencedDeclaration": 81,
                                       "type": "uint8",
-                                      "value": "dyeOne"
+                                      "value": "dieOne"
                                     },
                                     "id": 86,
                                     "name": "Identifier",
@@ -1369,7 +1369,7 @@
                                       ],
                                       "referencedDeclaration": 81,
                                       "type": "uint8",
-                                      "value": "dyeOne"
+                                      "value": "dieOne"
                                     },
                                     "id": 89,
                                     "name": "Identifier",
@@ -1486,7 +1486,7 @@
                                       ],
                                       "referencedDeclaration": 83,
                                       "type": "uint8",
-                                      "value": "dyeTwo"
+                                      "value": "dieTwo"
                                     },
                                     "id": 96,
                                     "name": "Identifier",
@@ -1537,7 +1537,7 @@
                                       ],
                                       "referencedDeclaration": 83,
                                       "type": "uint8",
-                                      "value": "dyeTwo"
+                                      "value": "dieTwo"
                                     },
                                     "id": 99,
                                     "name": "Identifier",
@@ -1614,8 +1614,13 @@
       "events": {},
       "links": {},
       "address": "0x4149e018293e37726c49ba42b15fa9384d0357bc"
+    },
+    "1510563767067": {
+      "events": {},
+      "links": {},
+      "address": "0xf0ce9bb68eaa0a47c5a6a5a62881a97e18099c49"
     }
   },
   "schemaVersion": "1.0.1",
-  "updatedAt": "2017-11-12T16:07:58.615Z"
+  "updatedAt": "2017-11-13T09:35:42.806Z"
 }
