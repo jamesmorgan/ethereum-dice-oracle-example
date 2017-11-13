@@ -10,7 +10,7 @@
     "bluebird": "^3.5.1",
     "prompt": "^1.0.0",
     "truffle-contract": "^3.0.1",
-    "web3": "^1.0.0-beta2"
+    "web3": "^1.0.0-beta.24"
   },
   "devDependencies": {},
   "scripts": {
