@@ -26,7 +26,7 @@ node oracle.js
 
 ### Running your client
 ```bash
-node trigger_client.js
+node client.js
 ```
 
 ## Testing

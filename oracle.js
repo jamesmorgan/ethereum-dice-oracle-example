@@ -1,4 +1,5 @@
 process.on('unhandledRejection', error => console.log('unhandledRejection', error.message));
+
 const prompt = require('prompt');
 
 const DiceResultsOracle = require('./build/contracts/DiceResultsOracle.json');
@@ -27,32 +28,33 @@ if (typeof oracleContract.currentProvider.sendAsync !== "function") {
     };
 }
 
-process.on('unhandledRejection', error => console.log('unhandledRejection', error.message));
-
 // Get accounts from web3
 web3.eth.getAccounts((err, accounts) => {
     oracleContract.deployed()
         .then((oracleInstance) => {
 
             /**
-             * Subscribe to a request for providing a off chain data
+             * Subscribe to a request to capture an off chain data
              */
-            oracleInstance.CallbackTrigger()
+            oracleInstance.CaptureRealWorldData()
                 .watch((err, event) => {
 
-                    // launch prompt for dice values
+                    /**
+                     * In here we interface with the real world e.g. blockchain / Web API's / IoT / Barcode & Sensors
+                     */
+
+                    // Launch prompt
                     prompt.start();
 
-                    // Capture the result from the 'real world'
+                    // Ask the user for some data -> Oracle Data Source
                     prompt.get(['throw1', 'throw2'], (err, result) => {
-                        console.log('Received: ');
-                        console.log(`  die one: ${result.throw1}`);
-                        console.log(`  die two: ${result.throw2}`);
+                        console.log(`You threw : [${result.throw1}] + [${result.throw2}]`);
 
                         // Update the Oracle - providing the real world value
+                        // Same account which created the contract is the one who is resulting it
                         oracleInstance.setResult(result.throw1, result.throw2, {from: accounts[0]})
                     });
-                })
+                });
         })
         .catch((err) => console.log(err));
 }).catch((err) => console.log(err));

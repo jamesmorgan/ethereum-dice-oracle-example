@@ -12,7 +12,7 @@ contract DiceResultsOracle {
 
     address public owner;
 
-    event CallbackTrigger();
+    event CaptureRealWorldData();
 
     event GameResulted(address resulter, uint8 die1, uint8 die2);
 
@@ -20,8 +20,8 @@ contract DiceResultsOracle {
         owner = msg.sender;
     }
 
-    function triggerUpdate() public {
-        CallbackTrigger();
+    function refreshDataSource() public {
+        CaptureRealWorldData();
     }
 
     function setResult(uint8 dieOne, uint8 dieTwo)
