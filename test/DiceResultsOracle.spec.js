@@ -1,12 +1,15 @@
 const DiceResultsOracle = artifacts.require('DiceResultsOracle');
+const expectThrow = require('./utils').expectThrow;
 
 contract('DiceResultsOracle spec', function (accounts) {
+
+    const creator_account = accounts[0];
 
     let oracle;
 
     beforeEach(async () => {
         // Create a new DiceResultsOracle
-        oracle = await DiceResultsOracle.new({from: accounts[0]});
+        oracle = await DiceResultsOracle.new({from: creator_account});
     });
 
     it("should default to 0/0 results", async () => {
@@ -15,14 +18,14 @@ contract('DiceResultsOracle spec', function (accounts) {
         assert.strictEqual(results[1].toNumber(), 0);
     });
 
-    it("should set results and emit event once resulted", async () => {
+    it("should set/get results & emit resulted once set", async () => {
 
         const dieOne = 2;
         const dieTwo = 4;
 
         let eventWatcher = oracle.GameResulted();
 
-        return oracle.setResult(dieOne, dieTwo, {from: accounts[0]})
+        return oracle.setResult(dieOne, dieTwo, {from: creator_account})
             .then(() => {
                 return eventWatcher.get();
             })
@@ -33,7 +36,7 @@ contract('DiceResultsOracle spec', function (accounts) {
                 // Confirm the results are set and emitted
                 let eventArgs = events[0].args;
 
-                assert.equal(eventArgs.resulter, accounts[0]);
+                assert.equal(eventArgs.resulter, creator_account);
                 assert.equal(eventArgs.die1, dieOne);
                 assert.equal(eventArgs.die2, dieTwo);
 
@@ -45,6 +48,17 @@ contract('DiceResultsOracle spec', function (accounts) {
             });
     });
 
-    // TODO more tests...
+    it('Only the contract creator can set the result', async () => {
+        let different_account = accounts[1];
+        await expectThrow(oracle.setResult(1, 2, {from: different_account}));
+    });
+
+    it('min size of result', async () => {
+        await expectThrow(oracle.setResult(-1, 0, {from: creator_account}));
+    });
+
+    it('min size of result', async () => {
+        await expectThrow(oracle.setResult(7, 6, {from: creator_account}));
+    });
 
 });
