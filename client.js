@@ -1,5 +1,6 @@
 process.on('unhandledRejection', error => console.log('unhandledRejection', error.message));
 const prompt = require('prompt');
+const _ = require('lodash');
 
 const OracleContract = require('./build/contracts/DiceResultsOracle.json');
 const contract = require('truffle-contract');
@@ -27,8 +28,7 @@ if (typeof oracleContract.currentProvider.sendAsync !== "function") {
     };
 }
 
-let guess_throw1;
-let guess_throw2;
+let guesses = [];
 
 web3.eth.getAccounts((err, accounts) => {
 
@@ -40,13 +40,12 @@ web3.eth.getAccounts((err, accounts) => {
 
             console.log('Guess the next Dice throw...!');
             prompt.get(['throw1', 'throw2'], function (err, result) {
-                console.log("\n");
-                console.log('You guessed:');
-                console.log('  throw1: ' + result.throw1);
-                console.log('  throw2: ' + result.throw2);
 
-                guess_throw1 = result.throw1;
-                guess_throw2 = result.throw2;
+                guesses.push(result.throw1);
+                guesses.push(result.throw2);
+
+                console.log("\n");
+                console.log(`You guessed: [${guesses}]`);
 
                 let yesNoPrompt = {
                     name: 'yesno',
@@ -77,9 +76,11 @@ web3.eth.getAccounts((err, accounts) => {
                                     .watch((err, event) => {
                                         let args = event.args;
 
-                                        console.log(`Oracle data received : [${args.die1.valueOf()}] + [${args.die2.valueOf()}]`);
+                                        let results = [args.die1.valueOf(), args.die2.valueOf()];
 
-                                        if (args.die1.valueOf() === guess_throw1 && args.die2.valueOf() === guess_throw2) {
+                                        console.log(`Oracle data received : [${results}]`);
+
+                                        if (_.isEqual(results.sort(), guesses.sort())) {
                                             console.log("------------------------");
                                             console.log("CONGRATULATIONS YOU WIN!");
                                             console.log("------------------------");

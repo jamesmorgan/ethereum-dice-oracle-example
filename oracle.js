@@ -28,6 +28,10 @@ if (typeof oracleContract.currentProvider.sendAsync !== "function") {
     };
 }
 
+console.log("--------------");
+console.log("Oracle started, awaiting request to fetch real world data....!");
+console.log("--------------\n");
+
 // Get accounts from web3
 web3.eth.getAccounts((err, accounts) => {
     oracleContract.deployed()
@@ -38,6 +42,8 @@ web3.eth.getAccounts((err, accounts) => {
              */
             oracleInstance.CaptureRealWorldData()
                 .watch((err, event) => {
+
+                    console.log("Received request to fetch real world data....!\n");
 
                     /**
                      * In here we interface with the real world e.g. blockchain / Web API's / IoT / Barcode & Sensors
